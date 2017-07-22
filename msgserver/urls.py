@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from apiserver import views
+from paperserver.views import paperdetect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^sendMsg/(?P<phone>[0-9]+)/$', views.sendMsg, name='sendMsg'),
     url(r'^verify/(?P<phone>[0-9]+)/(?P<code>[a-zA-Z0-9]+)/$', views.verifyCode, name='verifyCode'),
+    url(r'^paperdetect/(?P<hash>[a-zA-Z0-9]+)/$', paperdetect, name='paperdetect')
 ]

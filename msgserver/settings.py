@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apiserver.apps.ApiserverConfig',
+    'paperserver.apps.PaperserverConfig',
     'corsheaders',
 ]
 

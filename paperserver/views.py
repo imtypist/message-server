@@ -28,6 +28,9 @@ def paperdetect(request, hash):
 	    	output = os.popen("python " + ROOT_PATH + "src/isSimilar.py {} {} {} {} -c 0.8".format(ROOT_PATH + 'data/txt/' + filename + '.txt', ROOT_PATH + 'data/txt/' + str(i) + '.txt', ROOT_PATH + 'data/stopwords.txt', ROOT_PATH + 'data/word.dict'))
 	    	res = output.read()
 	    	res = float(res)
+	    	if res is 1.0:
+	    		similarity = res
+	    		break
 	    	if res > similarity:
 	    		similarity = res
 	except Exception:
